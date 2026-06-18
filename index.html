@@ -195,15 +195,19 @@
 
   <script>
     const params = new URLSearchParams(window.location.search);
-    const name = params.get("n") || "You";
-    document.getElementById("title").textContent = `For ${name} ❤️`;
+    const name = params.get("n") || "Dressinha";
+    document.getElementById("title").textContent = `Para ${name} ❤️`;
 
     const promises = [
-      "Prometo.",
-      "I promise to keep choosing you, every single day.",
-      "I promise to be your biggest supporter and your safest place.",
-      "I promise to listen with an open heart and love you without conditions.",
-      "I promise to keep our love full of small, beautiful moments."
+"Prometo te amar para sempre"
+      
+"Prometo continuar te escolhendo, todos os dias."
+
+"Prometo ser seu maior apoio e seu porto seguro."
+
+"Prometo te ouvir de coração aberto e te amar incondicionalmente."
+
+"Prometo manter nosso amor repleto de pequenos e belos momentos."
     ];
 
     const btn = document.getElementById("startBtn");
@@ -219,7 +223,7 @@
           index++;
           setTimeout(showPromise, 4500);
         } else {
-          box.innerHTML = "Forever & Always ❤️";
+          box.innerHTML = "Para todo o sempre ❤️";
           box.style.fontFamily = "'Dancing Script', cursive";
           box.style.fontSize = "2.8rem";
           box.style.textShadow = "0 0 15px rgba(255,182,193,0.8)";
