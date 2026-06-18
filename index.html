@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" />
+  
+  <title>A Promise ❤️</title>
+  <meta name="title" content="A Special Promise ❤️ | Created by Mayur Borgude">
+  <meta name="description" content="A magical Valentine's Week surprise for Promise Day. Experience a heartfelt journey of promises, designed and developed by Mayur Borgude (Mayborg).">
+  <meta name="keywords" content="Mayur Borgude, Mayborg, Promise Day, Valentine Week Surprise, Romantic Web Page, Promises for Her, Promises for Him, Interactive Valentine Gift">
+  <meta name="author" content="Mayur Borgude">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://github.com/Mayborg121">
+  <meta property="og:title" content="A Special Promise ❤️ | Valentine Surprise">
+  <meta property="og:description" content="A magical journey of promises. A Valentine's Week special created by Mayur Borgude.">
+  <meta property="og:image" content="https://fav.farm/❤️">
+
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="A Special Promise ❤️ | Mayur Borgude">
+  <meta property="twitter:description" content="Interactive Promise Day surprise created by Mayur Borgude.">
+  
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "Promise Day Surprise",
+      "author": {
+        "@type": "Person",
+        "name": "Mayur Borgude",
+        "alternateName": "Mayborg"
+      },
+      "description": "An interactive web experience for Valentine Week and Promise Day.",
+      "genre": "Romantic Interactive Media"
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-pink: #ff4d8d;
+      --glass-bg: rgba(255, 255, 255, 0.1);
+      --glass-border: rgba(255, 255, 255, 0.2);
+      --text-glow: 0 0 10px rgba(255, 182, 193, 0.6);
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: "Poppins", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at center, #2b000f 0%, #0a0000 100%);
+      overflow: hidden;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -10%;
+      pointer-events: none;
+      animation: floatUp 6s linear forwards;
+      filter: drop-shadow(0 0 8px rgba(255, 77, 141, 0.8));
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+      20% { opacity: 0.6; }
+      100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+    }
+
+    .container {
+      max-width: 500px;
+      width: 100%;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: -10rem;
+    }
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(2.5rem, 8vw, 3.5rem);
+      margin-bottom: 20px;
+      color: #ffb6c1;
+      /* Soft Glow on Title */
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5), 0 0 20px rgba(255, 182, 193, 0.4);
+    }
+
+    .btn {
+      padding: 16px 40px;
+      border: 1px solid var(--glass-border);
+      border-radius: 50px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      background: var(--primary-pink);
+      color: white;
+      font-weight: 500;
+      /* Shadow and Inner Glow */
+      box-shadow: 0 10px 20px rgba(255, 45, 100, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+      z-index: 20;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 15px 30px rgba(255, 77, 141, 0.6);
+    }
+
+    .promise-box {
+      width: 90%;
+      margin: 1rem;
+      padding: 40px 20px;
+      border-radius: 25px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid var(--glass-border);
+      /* Elegant Box Shadow and Glow */
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 77, 141, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 180px; 
+      font-size: clamp(1.1rem, 4vw, 1.5rem);
+      font-weight: 300;
+      line-height: 1.5;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      display: none;
+      /* Text shadow for readability */
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    }
+
+    .promise-box.active { display: flex; }
+    .promise-box.show { opacity: 1; transform: translateY(0); }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9rem;
+      width: 100%;
+      color: rgba(255, 255, 255, 0.6);
+      z-index: 15;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    }
+
+    footer a {
+      color: #ffb6c1;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    footer a:hover { 
+      color: var(--primary-pink);
+      text-shadow: 0 0 8px var(--primary-pink);
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 2.5rem; }
+      .promise-box {
+        font-size: 1.2rem;
+        min-height: 200px;
+        padding: 30px 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="hearts"></div>
+
+  <main class="container">
+    <h1 id="title">For You ❤️</h1>
+
+    <button class="btn" id="startBtn" aria-label="Start the promise journey">
+      Tap for a surprise 💝
+    </button>
+
+    <div class="promise-box" id="promiseBox" aria-live="polite"></div>
+  </main>
+
+  <footer>
+    Made with ❤️ by 
+    <a href="https://github.com/Mayborg121" target="_blank" rel="noopener">Mayborg</a>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("n") || "You";
+    document.getElementById("title").textContent = `For ${name} ❤️`;
+
+    const promises = [
+      "I promise to always make time for you, even on my busiest days.",
+      "I promise to keep choosing you, every single day.",
+      "I promise to be your biggest supporter and your safest place.",
+      "I promise to listen with an open heart and love you without conditions.",
+      "I promise to keep our love full of small, beautiful moments."
+    ];
+
+    const btn = document.getElementById("startBtn");
+    const box = document.getElementById("promiseBox");
+    let index = 0;
+
+    function showPromise() {
+      box.classList.remove("show");
+      setTimeout(() => {
+        if (index < promises.length) {
+          box.textContent = promises[index];
+          box.classList.add("show");
+          index++;
+          setTimeout(showPromise, 4500);
+        } else {
+          box.innerHTML = "Forever & Always ❤️";
+          box.style.fontFamily = "'Dancing Script', cursive";
+          box.style.fontSize = "2.8rem";
+          box.style.textShadow = "0 0 15px rgba(255,182,193,0.8)";
+          box.classList.add("show");
+        }
+      }, 800);
+    }
+
+    btn.addEventListener("click", () => {
+      btn.style.display = "none";
+      box.classList.add("active");
+      setTimeout(showPromise, 100);
+    });
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = ["❤️", "💖", "✨", "🌸"][Math.floor(Math.random() * 4)];
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 15 + 10 + "px";
+      heart.style.animationDuration = Math.random() * 2 + 4 + "s";
+      document.getElementById("hearts").appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+
+    setInterval(createHeart, 350);
+  </script>
+</body>
+</html>
+
+
